@@ -1,0 +1,15 @@
+---
+- name: Configure and start web server
+  hosts: app_servers
+  become: true
+  tasks:
+    - name: Ensure Apache httpd is installed
+      ansible.builtin.yum:
+        name: httpd
+        state: present
+    
+    - name: Ensure the httpd service is running
+      ansible.builtin.service:
+        name: httpd
+        state: started
+        enabled: true
