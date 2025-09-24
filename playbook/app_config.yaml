@@ -7,9 +7,3 @@
       ansible.builtin.yum:
         name: httpd
         state: present
-    
-    - name: Ensure the httpd service is running
-      ansible.builtin.service:
-        name: httpd
-        state: started
-        enabled: true
