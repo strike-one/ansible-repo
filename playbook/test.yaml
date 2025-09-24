@@ -4,8 +4,3 @@
   tasks:
     - name: Ping each host to verify connection
       ansible.builtin.ping:
-     - name: Verify a specific file exists
-      ansible.builtin.stat:
-        path: /etc/hosts
-      register: hosts_file_stat
-      ignore_errors: true # Continue playbook even if file is not found
